@@ -146,7 +146,7 @@ if uploaded_file or use_demo:
         demo_img = get_demo_image()
         if demo_img:
             st.markdown("### 🧪 Using demo image")
-            st.image(demo_img, caption="Demo Image", use_column_width=True)
+            st.image(demo_img, caption="Demo Image", use_column_width=False)
             st.markdown("### 🔍 Detecting...")
             processed_img, texts = detect_and_read(demo_img)
     elif file_ext in [".jpg", ".jpeg", ".png", ".bmp"]:
@@ -168,7 +168,7 @@ if uploaded_file or use_demo:
 
     # Show result
     if texts:
-        st.image(processed_img, caption="✅ Processed Image", use_column_width=True)
+        st.image(processed_img, caption="✅ Processed Image", use_column_width=False)
         df = pd.DataFrame(texts, columns=["Plate Text", "Confidence (%)"])
         st.markdown("### 🧾 Detected License Plates")
         st.dataframe(df, use_container_width=True)
