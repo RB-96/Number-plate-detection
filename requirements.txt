@@ -4,3 +4,5 @@ streamlit
 opencv-python-headless
 ultralytics
 dill
+paddleocr==2.10.0
+paddlepaddle==3.0.0
